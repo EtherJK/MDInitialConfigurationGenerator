@@ -1,0 +1,44 @@
+# usage: obviously!
+box	20	20	20
+bondary_type	periodic
+molecule_type	5
+atom_type	5
+atom_charge	1	0.5	-1	0	0
+bond_type	1
+bond_length	1.0
+angle_type	1
+
+# these lines are for DL_MESO, if you use LAMMPS, ignore them
+########################
+bond_force	harm
+bond_coef	100.0
+
+interactions	dpd
+*	*	25.0	1.0	6.7
+0	*	30.0	1.8	5.0
+2	3	21.0	0.9	3.3
+########################
+
+molecule 1
+number	20
+atom	(1, 0,)10
+bond	19 * 0
+
+molecule 2
+number	20
+atom	20 * 1
+bond	19 * 0
+
+molecule 3
+number	30
+atom	20 * 2
+bond	19 * 0
+
+molecule	4
+number	20
+atom	20 * 3
+bond	19 * 0
+
+molecule 5
+number	6000
+atom	4
